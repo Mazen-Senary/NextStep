@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ProfileFragment">
+
+    <!-- Banner -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_marginTop="-15dp"
+        android:layout_height="wrap_content"
+        android:background="#162A3D"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="Back Icon"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Profile"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:gravity="center" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- User Photo -->
+    <ImageView
+        android:id="@+id/user_photo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/user3"
+        android:contentDescription="User Photo"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- User Name -->
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="User Name"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/user_photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- User Email -->
+    <TextView
+        android:id="@+id/user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="user@example.com"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/user_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Portfolio Button -->
+    <Button
+        android:id="@+id/portfolio_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Portfolio"
+        android:background="@drawable/roundporfolioshape"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/user_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    <!-- General Settings Section -->
+    <LinearLayout
+        android:id="@+id/general_settings_section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:background="#358F8E8E"
+        app:layout_constraintTop_toBottomOf="@id/portfolio_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/general_settings_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="General Settings"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <!-- Dark Mode Toggle -->
+    <LinearLayout
+        android:id="@+id/dark_mode_toggle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/general_settings_section"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/dark_mode_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Dark Mode Icon"
+            android:src="@drawable/darkmode" />
+
+        <TextView
+            android:id="@+id/dark_mode_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dark Mode"
+            android:textSize="16sp" />
+
+        <Switch
+            android:id="@+id/dark_mode_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Change Password Option -->
+    <LinearLayout
+        android:id="@+id/change_password_option"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/dark_mode_toggle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/change_password_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="Change Password Icon"
+            android:src="@drawable/lock" />
+
+        <TextView
+            android:id="@+id/change_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Change Password"
+            android:textColor="#007bff"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Language Option -->
+    <LinearLayout
+        android:id="@+id/language_option_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/change_password_option"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/language_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="Language Icon"
+            android:src="@drawable/language" />
+
+        <TextView
+            android:id="@+id/language_option"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Language"
+            android:textColor="#007bff"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+    <!-- Information Section -->
+    <LinearLayout
+        android:id="@+id/Information_settings_section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:orientation="vertical"
+        android:background="#358F8E8E"
+        app:layout_constraintTop_toBottomOf="@id/user_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <TextView
+            android:id="@+id/Information_settings_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Information"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <!-- Dark Mode Toggle -->
+    <LinearLayout
+        android:id="@+id/AboutAppContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/Information_settings_section"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/AboutAppIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="About App Icon"
+            android:src="@drawable/mobile" />
+
+        <TextView
+            android:id="@+id/AboutAppText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="About App"
+            android:textSize="16sp"
+            android:textColor="#007bff"/>
+
+
+    </LinearLayout>
+
+    <!-- Terms and conditions Option -->
+    <LinearLayout
+        android:id="@+id/Terms_Conditions_option"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/AboutAppContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/Terms_Conditions_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="Terms and Conditions"
+            android:src="@drawable/terms" />
+
+        <TextView
+            android:id="@+id/TermsConditionsText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Terms and Conditions"
+            android:textColor="#007bff"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Privacy Option -->
+    <LinearLayout
+        android:id="@+id/Privacy_policy_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/Terms_Conditions_option"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/Privacy_policy_icon"
+            android:layout_width="21dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Privacy Icon"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/privacy" />
+
+        <TextView
+            android:id="@+id/Privacy_option"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Privacy Policy"
+            android:textColor="#007bff"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Share This App Option -->
+    <LinearLayout
+        android:id="@+id/Share_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/Privacy_policy_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/Share_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="Share Icon"
+            android:src="@drawable/share" />
+
+        <TextView
+            android:id="@+id/Share_option"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Share This App"
+            android:textColor="#007bff"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:text="Logout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Share_container"
+        android:textColor="@android:color/white"
+        android:background="@drawable/roundporfolioshape" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
