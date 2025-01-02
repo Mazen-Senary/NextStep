@@ -25,7 +25,7 @@ public class PortfolioActivity extends AppCompatActivity {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                     WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-            transaction.replace(R.id.main, new ProfileFragment()); // Replace with actual ProfileFragment
+            transaction.replace(R.id.ResetButton, new ProfileFragment()); // Replace with actual ProfileFragment
             transaction.addToBackStack(null); // Add this transaction to the back stack
             transaction.commit();
         });

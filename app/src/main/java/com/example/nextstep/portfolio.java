@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -41,7 +39,7 @@ public class portfolio extends Fragment {
                 FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
                 fragmentManager.beginTransaction()
 
-                        .replace(R.id.main, new ProfileFragment()) // Replace with your profile fragment
+                        .replace(R.id.ResetButton, new ProfileFragment()) // Replace with your profile fragment
                         .addToBackStack(null) // Optional: Add to back stack if you want to maintain back navigation
                         .commit();
             }
